@@ -16,6 +16,9 @@ namespace LoginAppClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Log.FileName = "LoginAppClient.log";
+
             Application.Run(new MainForm());
         }
     }
