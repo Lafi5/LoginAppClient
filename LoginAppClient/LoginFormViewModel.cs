@@ -62,6 +62,8 @@ namespace LoginAppClient
                 if (user.Username.Equals(username) && user.Code.Equals(password))
                 {
                     IsUserLoggedIn = true;
+                    UserName = user.Username;
+                    Password = user.Code;
                     break;
                 }
                 else
