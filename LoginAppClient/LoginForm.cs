@@ -28,8 +28,15 @@ namespace LoginAppClient
                 }
                 else
                 {
-                    MessageBox.Show("Access denied", "Error");
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    txtUsername.Focus();
+                    MessageBox.Show("Username or password incorrect.", "Access denied!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Username and password must be filled.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
