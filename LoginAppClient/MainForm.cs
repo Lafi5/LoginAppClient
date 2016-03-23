@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace LoginAppClient
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            IsMdiContainer = true;
+            LoginForm loginForm = new LoginForm();
+            loginForm.MdiParent = this;
+            loginForm.Show();
         }
     }
 }
