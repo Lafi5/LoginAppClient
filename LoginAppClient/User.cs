@@ -17,6 +17,7 @@ namespace LoginAppClient
         public string LastName { get; set; }
         [DataMember]
         public string Code { get; set; }
+        public string Username { get; set; }
 
         public User()
         {
@@ -30,6 +31,12 @@ namespace LoginAppClient
             FirstName = firstname;
             LastName = lastName;
             Code = code;
+            GenerateUserName();
+        }
+
+        private void GenerateUserName()
+        {
+            Username = FirstName.ToLower().Substring(0, 1) + LastName.ToLower();
         }
 
         public string GetName()

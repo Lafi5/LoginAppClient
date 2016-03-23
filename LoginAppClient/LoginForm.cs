@@ -12,6 +12,7 @@ namespace LoginAppClient
 {
     public partial class LoginForm : Form
     {
+        LoginFormViewModel viewModel = new LoginFormViewModel();
         public LoginForm()
         {
             InitializeComponent();
@@ -21,13 +22,15 @@ namespace LoginAppClient
         {
             if (txtUsername.Text != "" && txtPassword.Text != "")
             {
-                login();
+                if (viewModel.ManageLogin(txtUsername.Text, txtPassword.Text))
+                {
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Access denied", "Error");
+                }
             }
-        }
-
-        private void login()
-        {
-            throw new NotImplementedException();
         }
     }
 }
